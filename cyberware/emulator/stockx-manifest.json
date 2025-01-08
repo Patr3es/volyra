@@ -1,0 +1,17 @@
+
+{
+    "name": "StockX",
+    "short_name": "StockX",
+    "description": "Online Store",
+    "start_url": "/stockx",
+    "display": "fullscreen",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "icons": [
+        {
+            "src": "/static/images/stockx_icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
