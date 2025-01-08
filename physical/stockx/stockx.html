@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=0.7">
+      <title>Paper Receipt Maker</title>
+      <meta name="robots" content="noindex, nofollow">
+      <link rel="stylesheet" href="/receipt1/static/css/style.css">
+      <style>
+         @font-face {
+           font-family: 'ProximaNova';
+           src: url("/receipt1/static/fonts/proxima_nova.otf") format('truetype');
+         }
+
+         @font-face {
+           font-family: 'GreySans';
+           src: url("/receipt1/static/fonts/grey_sans.ttf") format('truetype');
+         }
+
+         @font-face {
+            font-family: 'ProximaNovaExtraBold';
+            src: url("/receipt1/static/fonts/proxima_nova_eb.ttf") format('truetype');
+         }
+
+         body {
+           font-family: sans-serif;
+         }
+
+         .container {
+            max-width: 860px;
+            min-width: 300px;
+         }
+
+         #receipt {
+           background-image: url("/receipt1/static/images/brand_assets/stockx_paper_background.png");
+           background-size: 100% 100%;
+           background-repeat: no-repeat;
+           background-position: center;
+           height: 1169px;
+           width: 800px;
+         }
+
+         .date {
+            top: 132px;
+            left: 590px;
+            position: relative;
+            color: white;
+            font-size: 24px;
+            text-align: right;
+            width: 150px;
+         }
+
+         .order-number {
+            position: relative;
+            top: 323px;
+            width: 300px;
+            left: 446px;
+            text-align: right;
+            font-size: 27px;
+            font-weight: bold;
+            font-family: GreySans;
+         }
+
+         .product-name {
+            position: relative;
+            top: 390px;
+            width: 600px;
+            left: 45px;
+            font-size: 44px;
+            font-weight: bold;
+         }
+
+         .info-line {
+            width: 400px;
+            position: relative;
+            text-align: right;
+            left: 360px;
+            font-size: 22px;
+            font-family: GreySans;
+         }
+      </style>
+   </head>
+   <body>
+      <h3>StockX | ctrl + z to undo</h3>
+      <div class="container" contenteditable="true">
+          <div id="receipt" class="nike-top-part" contenteditable="true">
+              <div class="date">
+                  2024.05.19
+              </div>
+              <div class="order-number">
+                  5613973-5515798
+              </div>
+              <div class="product-name">
+                  Air Force 1 Low Off-White<br>
+                  Black White
+              </div>
+              <div class="info-line" style="top: 442px; left: 45px; display: flex; justify-content: space-between; width: 710px;">
+                  <div>U.S. Men's Size</div>
+                  <div style="font-size: 22px;">10</div>
+              </div>
+              <div class="info-line" style="top: 461px; font-size: 20px;">
+                    BLACK/WHITE-CONE-BLACK
+              </div>
+              <div class="info-line" style="top: 476px; font-size: 20px;">
+                    AO4606-001
+              </div>
+              <div class="info-line" style="top: 488px; font-size: 20px; left: 348px;">
+                    New; 100% authentic
+              </div>
+              <div class="info-line" style="top: 560px; font-family: ProximaNova; font-weight: 0; font-size: 25px;">
+                  $720.00
+              </div>
+              <div class="info-line" style="top: 574px; font-family: ProximaNova; font-weight: 0; font-size: 25px;">
+                  $40.00
+              </div>
+              <div class="info-line" style="top: 584px; font-family: ProximaNova; font-weight: 0; font-size: 25px; left: 355px;">
+                  FREE
+              </div>
+              <div class="info-line" style="top: 597px; font-family: ProximaNovaExtraBold; font-weight: Bold; font-size: 29px; ">
+                  $760.00
+              </div>
+          </div>
+      </div>
+      <div style="margin-top: 10px; display: flex; gap: 10px; justify-content: center;">
+          <button id="saveImage" class="save-button">Save as Image</button>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+      <script>
+        document.getElementById('saveImage').addEventListener('click', function() {
+          html2canvas(document.querySelector("#receipt")).then(canvas => {
+            let link = document.createElement('a');
+            link.download = 'receipt.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+          });
+        });
+      </script>
+   </body>
+</html>
