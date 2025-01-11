@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,18 +19,23 @@
             margin: 0;
         }
 
+        h1 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
         .product-row {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 20px;
-            margin-top: 50px;
+            flex-wrap: wrap;
+            margin-top: 20px;
         }
 
         .product-container {
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             width: 100%;
             max-width: 300px;
             opacity: 0; /* For animation */
@@ -40,6 +46,10 @@
         .product-container.reveal {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        .product-link {
+            text-decoration: none;
         }
 
         .product-rectangle {
@@ -55,6 +65,12 @@
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-rectangle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         .product-rectangle svg {
@@ -69,12 +85,6 @@
             z-index: 2;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Animation and background effects */
         @keyframes revealAnimation {
             from {
                 opacity: 0;
@@ -87,38 +97,45 @@
         }
     </style>
 </head>
+
 <body>
-    <h1 style="font-size: 30px; text-align: center;">Choose a Brand</h1>
+    <h1>Choose a Brand</h1>
     <div class="product-row">
         <!-- Nike -->
-        <div class="product-container">
-            <div class="product-rectangle">
-                <svg fill="none" height="360" viewBox="0 0 379 360" width="379" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M-8.16557 102.64C64.8243 63.3769 275.237 -0.0496263 319.534 8.00443C363.26 15.9546 159.459 136.061 58.655 178.535C57.6786 178.947 57.9268 180.368 58.984 180.439C146.582 186.332 336.008 206.174 389 288.387C282.284 266.741 -52.9662 284.36 -58 357.853" stroke="#0E1112" stroke-width="60" />
-                </svg>
-                <a href="/nike/nike.html" class="product-name">Nike</a>
+        <a href="/nike/nike.html" class="product-link">
+            <div class="product-container">
+                <div class="product-rectangle">
+                    <svg fill="none" height="360" viewBox="0 0 379 360" width="379" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M-8.16557 102.64C64.8243 63.3769 275.237 -0.0496263 319.534 8.00443C363.26 15.9546 159.459 136.061 58.655 178.535C57.6786 178.947 57.9268 180.368 58.984 180.439C146.582 186.332 336.008 206.174 389 288.387C282.284 266.741 -52.9662 284.36 -58 357.853" stroke="#0E1112" stroke-width="60" />
+                    </svg>
+                    <span class="product-name">Nike</span>
+                </div>
             </div>
-        </div>
+        </a>
 
         <!-- Apple -->
-        <div class="product-container">
-            <div class="product-rectangle">
-                <svg fill="none" height="360" viewBox="0 0 379 360" width="379" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M-8.16557 102.64C64.8243 63.3769 275.237 -0.0496263 319.534 8.00443C363.26 15.9546 159.459 136.061 58.655 178.535C57.6786 178.947 57.9268 180.368 58.984 180.439C146.582 186.332 336.008 206.174 389 288.387C282.284 266.741 -52.9662 284.36 -58 357.853" stroke="#0E1112" stroke-width="60" />
-                </svg>
-                <a href="/apple/apple.html" class="product-name">Apple</a>
+        <a href="/apple/apple.html" class="product-link">
+            <div class="product-container">
+                <div class="product-rectangle">
+                    <svg fill="none" height="360" viewBox="0 0 379 360" width="379" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M-8.16557 102.64C64.8243 63.3769 275.237 -0.0496263 319.534 8.00443C363.26 15.9546 159.459 136.061 58.655 178.535C57.6786 178.947 57.9268 180.368 58.984 180.439C146.582 186.332 336.008 206.174 389 288.387C282.284 266.741 -52.9662 284.36 -58 357.853" stroke="#0E1112" stroke-width="60" />
+                    </svg>
+                    <span class="product-name">Apple</span>
+                </div>
             </div>
-        </div>
+        </a>
 
         <!-- StockX -->
-        <div class="product-container">
-            <div class="product-rectangle">
-                <svg fill="none" height="360" viewBox="0 0 379 360" width="379" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M-8.16557 102.64C64.8243 63.3769 275.237 -0.0496263 319.534 8.00443C363.26 15.9546 159.459 136.061 58.655 178.535C57.6786 178.947 57.9268 180.368 58.984 180.439C146.582 186.332 336.008 206.174 389 288.387C282.284 266.741 -52.9662 284.36 -58 357.853" stroke="#0E1112" stroke-width="60" />
-                </svg>
-                <a href="/stockx/stockx.html" class="product-name">StockX</a>
+        <a href="/stockx/stockx.html" class="product-link">
+            <div class="product-container">
+                <div class="product-rectangle">
+                    <svg fill="none" height="360" viewBox="0 0 379 360" width="379" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M-8.16557 102.64C64.8243 63.3769 275.237 -0.0496263 319.534 8.00443C363.26 15.9546 159.459 136.061 58.655 178.535C57.6786 178.947 57.9268 180.368 58.984 180.439C146.582 186.332 336.008 206.174 389 288.387C282.284 266.741 -52.9662 284.36 -58 357.853" stroke="#0E1112" stroke-width="60" />
+                    </svg>
+                    <span class="product-name">StockX</span>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 
     <script>
@@ -139,4 +156,5 @@
         });
     </script>
 </body>
+
 </html>
